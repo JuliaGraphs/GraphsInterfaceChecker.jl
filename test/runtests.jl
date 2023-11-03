@@ -2,5 +2,7 @@ using GraphsInterfaceChecker
 using Test
 
 @testset "GraphsInterfaceChecker.jl" begin
-    # Write your tests here.
+    @testset "Graphs.jl" begin
+        include("graphs.jl")
+    end
 end

@@ -1,9 +1,15 @@
 name = "GraphsInterfaceChecker"
 uuid = "3bef136c-15ff-4091-acbb-1a4aafe67608"
-authors = ["Guillaume Dalle <22795598+gdalle@users.noreply.github.com> and contributors"]
-version = "1.0.0-DEV"
+authors = ["Guillaume Dalle", "Oleg Fafurin"]
+version = "0.1.0"
+
+[deps]
+Graphs = "86223c79-3864-5bf0-83f7-82e725a168b6"
+Interfaces = "85a1e053-f937-4924-92a5-1367d23b7b87"
 
 [compat]
+Graphs = "1.8"
+Interfaces = "0.2"
 julia = "1.9"
 
 [extras]
