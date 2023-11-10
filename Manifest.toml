@@ -2,7 +2,7 @@
 
 julia_version = "1.9.3"
 manifest_format = "2.0"
-project_hash = "471a3deb4410c9edcb4627f08d65bcb68a473589"
+project_hash = "ad6b37f779e380e36f4488c0f02aa967a8de52e5"
 
 [[deps.ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
@@ -73,9 +73,9 @@ deps = ["Markdown"]
 uuid = "b77e0a4c-d291-57a0-90e8-8db25a27a240"
 
 [[deps.Interfaces]]
-git-tree-sha1 = "c08d34e780291148b18bf51b2789e2abf3f06c68"
+git-tree-sha1 = "3a6d577f06ee9851c32ee03489b95db84f62505d"
 uuid = "85a1e053-f937-4924-92a5-1367d23b7b87"
-version = "0.2.0"
+version = "0.3.0"
 
 [[deps.LibCURL]]
 deps = ["LibCURL_jll", "MozillaCACerts_jll"]
