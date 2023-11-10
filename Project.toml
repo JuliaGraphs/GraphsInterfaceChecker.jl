@@ -9,7 +9,7 @@ Interfaces = "85a1e053-f937-4924-92a5-1367d23b7b87"
 
 [compat]
 Graphs = "1.8"
-Interfaces = "0.2"
+Interfaces = "0.2, 0.3"
 julia = "1.9"
 
 [extras]
