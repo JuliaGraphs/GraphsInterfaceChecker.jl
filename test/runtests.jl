@@ -5,4 +5,13 @@ using Test
     @testset "Graphs.jl" begin
         include("graphs.jl")
     end
+    @testset "MetaGraphs.jl" begin
+        include("metagraphs.jl")
+    end
+    @testset "SimpleWeightedGraphs.jl" begin
+        include("simpleweightedgraphs.jl")
+    end
+    @testset "MetaGraphsNext.jl" begin
+        include("metagraphsnext.jl")
+    end
 end
