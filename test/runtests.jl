@@ -1,7 +1,15 @@
+using Aqua
 using GraphsInterfaceChecker
+using JuliaFormatter
 using Test
 
-@testset "GraphsInterfaceChecker.jl" begin
+@testset verbose = true "GraphsInterfaceChecker.jl" begin
+    @testset "Aqua" begin
+        Aqua.test_all(GraphsInterfaceChecker)
+    end
+    @testset "JuliaFormatter" begin
+        @test JuliaFormatter.format(GraphsInterfaceChecker; overwrite=false)
+    end
     @testset "Graphs.jl" begin
         include("graphs.jl")
     end

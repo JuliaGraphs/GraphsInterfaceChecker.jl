@@ -7,7 +7,9 @@ edges_description = [
     (:red, :green) => :yellow, (:red, :blue) => :magenta, (:green, :blue) => :cyan
 ]
 
-g1 = MetaGraphsNext.MetaGraph(graph, vertices_description, edges_description, "additive colors")
+g1 = MetaGraphsNext.MetaGraph(
+    graph, vertices_description, edges_description, "additive colors"
+)
 
 g2 = MetaGraphsNext.MetaGraph(
     Graph();  # underlying graph structure
