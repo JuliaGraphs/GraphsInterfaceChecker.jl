@@ -1,18 +1,16 @@
-using GraphsInterfaceChecker
 using Graphs
-using SimpleWeightedGraphs
+using GraphsInterfaceChecker
+using Interfaces
+import SimpleWeightedGraphs as SWG
 using Test
 
-sources = [1, 2, 1];
-destinations = [2, 3, 3];
-weights = [0.5, 0.8, 2.0];
+test_graphs = [SimpleGraph(0), path_graph(4), complete_graph(4)]
+test_digraphs = [SimpleDiGraph(0), path_digraph(4), complete_digraph(4)]
 
-g1 = SimpleWeightedGraph(sources, destinations, weights)
+test_weightedgraphs = map(SWG.SimpleWeightedGraph, test_graphs)
+test_weighteddigraphs = map(SWG.SimpleWeightedDiGraph, test_digraphs)
 
-g2 = SimpleWeightedGraph(6)
-
-g3 = SimpleWeightedGraph(SimpleGraph([0 1; 1 0]), 2)
-
-gs = [g1, g2, g3]
-
-@test Interfaces.test(AbstractGraphInterface, SimpleWeightedGraph, gs)
+@test Interfaces.test(AbstractGraphInterface, SWG.SimpleWeightedGraph, test_weightedgraphs)
+@test Interfaces.test(
+    AbstractGraphInterface, SWG.SimpleWeightedDiGraph, test_weighteddigraphs
+)

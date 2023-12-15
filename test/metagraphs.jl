@@ -1,16 +1,17 @@
-using GraphsInterfaceChecker
 using Graphs
-using MetaGraphs
+using GraphsInterfaceChecker
+using Interfaces
+import MetaGraphs as MG
 using Test
 
-graphs = [
-    SimpleGraph(0, 0),
-    SimpleGraph(10, 20),
-    SimpleGraph(4, 6),
-    SimpleDiGraph(5, 20),
-    SimpleDiGraph([1 1 0; 1 0 1; 0 0 0]),
-    SimpleGraph([0 1 0; 1 0 0; 0 0 0]),
-]
-mgs = map((g) -> MetaGraph(g, 2.0), graphs)
+test_graphs = [SimpleGraph(0), path_graph(4), complete_graph(4)]
+test_digraphs = [SimpleDiGraph(0), path_digraph(4), complete_digraph(4)]
 
-@test Interfaces.test(AbstractGraphInterface, MetaGraph, mgs)
+test_metagraphs = map(MG.MetaGraph, test_graphs)
+test_metadigraphs = map(MG.MetaDiGraph, test_digraphs)
+
+@implements AbstractGraphInterface MG.MetaGraph test_metagraphs
+@implements AbstractGraphInterface MG.MetaDiGraph test_metadigraphs
+
+@test Interfaces.test(AbstractGraphInterface, MG.MetaGraph)
+@test Interfaces.test(AbstractGraphInterface, MG.MetaDiGraph)
