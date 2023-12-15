@@ -1,0 +1,9 @@
+[deps]
+Aqua = "4c88cf16-eb10-579e-8560-4a9242c79595"
+Graphs = "86223c79-3864-5bf0-83f7-82e725a168b6"
+Interfaces = "85a1e053-f937-4924-92a5-1367d23b7b87"
+JuliaFormatter = "98e50ef6-434e-11e9-1051-2b60c6c9e899"
+MetaGraphs = "626554b9-1ddb-594c-aa3c-2596fe9399a5"
+MetaGraphsNext = "fa8bd995-216d-47f1-8a91-f3b68fbeb377"
+SimpleWeightedGraphs = "47aef6b3-ad0c-573a-a1e2-d07658019622"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"

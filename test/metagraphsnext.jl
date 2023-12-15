@@ -1,24 +1,20 @@
 using Graphs
-using MetaGraphsNext
+using GraphsInterfaceChecker
+using Interfaces
+import MetaGraphsNext as MGN
+using Test
 
-graph = Graph(Edge.([(1, 2), (1, 3), (2, 3)]))
-vertices_description = [:red => (255, 0, 0), :green => (0, 255, 0), :blue => (0, 0, 255)]
-edges_description = [
-    (:red, :green) => :yellow, (:red, :blue) => :magenta, (:green, :blue) => :cyan
-]
+test_graphs = [SimpleGraph(0), path_graph(4), complete_graph(4)]
+test_digraphs = [SimpleDiGraph(0), path_digraph(4), complete_digraph(4)]
 
-g1 = MetaGraphsNext.MetaGraph(
-    graph, vertices_description, edges_description, "additive colors"
-)
+function make_metagraph(g)
+    return MGN.MetaGraph(
+        g, vertices(g) .=> nothing, collect(zip(src.(edges(g)), dst.(edges(g))) .=> nothing)
+    )
+end
 
-g2 = MetaGraphsNext.MetaGraph(
-    Graph();  # underlying graph structure
-    label_type=Symbol,  # color name
-    vertex_data_type=NTuple{3,Int},  # RGB code
-    edge_data_type=Symbol,  # result of the addition between two colors
-    graph_data="additive colors",  # tag for the whole graph
-)
+test_metagraphs = vcat(map(make_metagraph, test_graphs), map(make_metagraph, test_digraphs))
 
-gs = [g1, g2]
+@implements AbstractGraphInterface MGN.MetaGraph test_metagraphs
 
-@test Interfaces.test(AbstractGraphInterface, MetaGraphsNext.MetaGraph, gs)
+@test Interfaces.test(AbstractGraphInterface, MGN.MetaGraph)
