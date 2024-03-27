@@ -1,6 +1,6 @@
 # GraphsInterfaceChecker
 
-[![Build Status](https://github.com/gdalle/GraphsInterfaceChecker.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/gdalle/GraphsInterfaceChecker.jl/actions/workflows/CI.yml?query=branch%3Amain)
+[![Build Status](https://github.com/JuliaGraphs/GraphsInterfaceChecker.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/JuliaGraphs/GraphsInterfaceChecker.jl/actions/workflows/CI.yml?query=branch%3Amain)
 
 Formalization of the [`AbstractGraph` interface](https://juliagraphs.org/Graphs.jl/stable/ecosystem/interface/) from [Graphs.jl](https://github.com/JuliaGraphs/Graphs.jl), specified using [Interfaces.jl](https://github.com/rafaqz/Interfaces.jl).
 
@@ -11,7 +11,7 @@ Install GraphsInterfaceChecker.jl using the GitHub URL, and install Interfaces.j
 ```julia
 using Pkg
 
-Pkg.add(url="https://github.com/gdalle/GraphsInterfaceChecker.jl")
+Pkg.add(url="https://github.com/JuliaGraphs/GraphsInterfaceChecker.jl")
 Pkg.add("Interfaces")
 
 using GraphsInterfaceChecker
