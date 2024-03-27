@@ -22,4 +22,7 @@ using Test
     @testset "MetaGraphsNext.jl" begin
         include("metagraphsnext.jl")
     end
+    @testset "Multigraphs.jl" begin
+        include("multigraphs.jl")
+    end
 end

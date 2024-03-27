@@ -129,7 +129,7 @@ mutation = (
 
 ## Mandatory and optional
 
-mandatory = (; edgetype, vertices, edges, nv, ne, neighbors, weights)
+mandatory = (; is_directed, edgetype, vertices, edges, nv, ne, neighbors, weights)
 optional = (; mutation)
 
 ## Components
